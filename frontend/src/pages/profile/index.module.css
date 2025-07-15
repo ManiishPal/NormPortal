@@ -1,0 +1,220 @@
+.container {
+    padding: 1.3rem;
+    background: rgb(255, 253, 253);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.backDropContainer {
+    width: 100%;
+    height: 30vh;
+    background: url("https://wallpapers.com/images/hd/goth-girl-aesthetic-discord-pfp-r52w92smqodqgpwd.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 20px;
+}
+
+.backDropContainer img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: 8%;
+    text-align: center;
+}
+
+.profileImageWrapper {
+    width: 10em; /* Same as the image size */
+    height: 10em; /* Same as the image size */
+    /* Still apply to wrapper for consistent sizing */
+    border-radius: 50%;
+    position: absolute; /* Position this wrapper relative to .backDropContainer */
+    bottom: -30%;
+    left: 8%;
+    text-align: center; /* Center content within wrapper if needed */
+    overflow: hidden; /* Ensures the overlay stays within the circle */
+    cursor: pointer; /* Indicates it's clickable/hoverable */
+}
+
+/* MODIFIED: Target the actual profile image inside the new wrapper */
+.profileImageWrapper .backDrop { /* This targets the img with class .backDrop inside .profileImageWrapper */
+    width: 100%; /* Make it fill the wrapper */
+    height: 100%; /* Make it fill the wrapper */
+    object-fit: contain;
+    border-radius: 50%;
+    /* Remove position: absolute, bottom, left as they are now on .profileImageWrapper */
+    /* text-align: center; - also remove as it's not applicable to an img */
+}
+
+/* NEW: Styles for the edit overlay */
+.editOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+
+/* NEW: Show overlay on hover of the wrapper */
+.profileImageWrapper:hover .editOverlay {
+    opacity: 1; /* Show on hover */
+}
+
+
+.profileContainer__details {
+    /* Adjusted padding-top because the profile picture is now inside a wrapper
+       and might affect the flow slightly if not accounted for.
+       You might need to fine-tune this value after seeing it in the browser. */
+    padding-top: 6.6rem;
+}
+
+.profileContainer__details {
+    padding-top: 6.6rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.card__profileContainer {
+    display: flex;
+}
+
+
+.card__profileContainer > img {
+    width: 3.4rem;
+    height: auto;
+    height: 3.4rem;
+    object-fit: cover;
+}
+
+.connectBtn {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(3, 93, 183, 0.905);
+}
+
+.connectedButton {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    border: 1px solid rgb;
+    outline: none;
+    color: rgba(3, 93, 183, 0.905);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.workHistoryContainer {
+    display: flex;
+    gap: 1.4rem;
+    padding: 1.4rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.workHistoryCard {
+    min-width: fit-content;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgb(173, 173, 173);
+}
+
+.profileContainer__details input {
+    outline: none;
+    border-style: none;
+    padding-inline: 10px;
+    padding-block: 9px;
+    width: fit-content;
+}
+
+.nameEdit {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.updateProfileBtn {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(3, 93, 183, 0.905);
+    width: fit-content;
+}
+
+.profileContainer__details textarea {
+    outline: none;
+    border: none;
+    padding-inline: 10px;
+    padding-block: 9px;
+    font-family: "Poppins" !important;
+    font-size: 1.1rem;
+}
+
+.addWorkButton {
+    border: 1px solid silver;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-inline: 1.3rem;
+    background: white;
+    padding-block: 1.2rem;
+}
+
+.commentsContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.allCommentsContainer {
+    width: 40vw;
+    height: fit-content;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.inputField {
+    padding-inline: 1.3rem;
+    padding-block: 0.8rem;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid silver;
+    width: 100%;
+}
